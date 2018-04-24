@@ -15,11 +15,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.Task;
+
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText us,pas;
     Button bL,bR,bF,bG;
-
+    private GoogleSignInClient mGoogleSignInClient;
+    int RC_SIGN_IN=001;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +54,20 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Dang Update",Toast.LENGTH_LONG).show();
             }
         });
-        bG.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Dang Update",Toast.LENGTH_LONG).show();
-            }
-        });
+//        bG.setOnClickListener(new View.OnClickListener() {
+//            @Override
+////            public void onClick(View view) {
+////                Toast.makeText(MainActivity.this,"Dang Update",Toast.LENGTH_LONG).show();
+////            }
+//        }
+//        );
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        findViewById(R.id.sign_in_button).setOnClickListener(this);
     }
 
     private void Login() {
@@ -90,7 +108,37 @@ public class MainActivity extends AppCompatActivity {
         bL= findViewById(R.id.login);
         bR= findViewById(R.id.register);
         bF= findViewById(R.id.FP);
-        bG= findViewById(R.id.GG);
+ //       bG= findViewById(R.id.sign_in_button);
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.sign_in_button:
+                signIn();
+                break;
+            // ...
+        }
+    }
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+           /* Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);*/
+            Intent intent = new Intent(MainActivity.this, Voice.class);
+            startActivity(intent);
+        }
     }
 
 
