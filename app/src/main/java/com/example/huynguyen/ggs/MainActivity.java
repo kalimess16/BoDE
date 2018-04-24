@@ -18,8 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText us,pas;
-    Button bL,bR,bF,bG;
+    EditText username,password;
+    Button bLogin,bRegister,bFP,bGoogle;
 
 
 
@@ -29,25 +29,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AnhXa();
 
-        bR.setOnClickListener(new View.OnClickListener() {
+        bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CreatAccount();
             }
         });
-        bL.setOnClickListener(new View.OnClickListener() {
+        bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Login();
             }
         });
-        bF.setOnClickListener(new View.OnClickListener() {
+        bFP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this,"Dang Update",Toast.LENGTH_LONG).show();
             }
         });
-        bG.setOnClickListener(new View.OnClickListener() {
+        bGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this,"Dang Update",Toast.LENGTH_LONG).show();
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     textView.setText("sai mk");
+                    Toast.makeText(MainActivity.this, "ko lam dc", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -102,20 +103,20 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Closed",Toast.LENGTH_LONG).show();
             }
         });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        builder.show();
+       /* AlertDialog dialog = builder.create();
+        dialog.show();*/
 
     }
 
 
     private void AnhXa() {
-        us = findViewById(R.id.user);
-        pas= findViewById(R.id.pass);
-        bL= findViewById(R.id.login);
-        bR= findViewById(R.id.register);
-        bF= findViewById(R.id.FP);
-        bG= findViewById(R.id.GG);
+        username = findViewById(R.id.user);
+        password= findViewById(R.id.pass);
+        bLogin= findViewById(R.id.login);
+        bRegister= findViewById(R.id.register);
+        bFP= findViewById(R.id.FP);
+        bGoogle= findViewById(R.id.GG);
     }
 
 

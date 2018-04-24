@@ -1,91 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" >
+
     <LinearLayout
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="50pt"
-        >
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <TextView
-            android:textSize="30pt"
-            android:text="REGISTER"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="New account"
+            android:textColor="@android:color/black"
+            android:textSize="40dp"
+            android:paddingTop="10dp"
+            />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25pt"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edFirstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:width="150dp"
+            android:hint="First Name"
+            android:inputType="text"
+            android:paddingLeft="30dp" />
+
+        <EditText
+            android:id="@+id/edLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:width="150dp"
+            android:hint="Last Name"
+            android:inputType="text"
+            android:paddingLeft="30dp" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:gravity="center"
-        android:layout_marginTop="20pt"
+        android:layout_marginTop="0dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="25pt">
-        <TextView
-            android:layout_marginLeft="10pt"
-            android:textSize="10pt"
-            android:text="User name:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
         <EditText
             android:inputType="text"
-            android:hint="Enter username or email"
+            android:hint="Phone Number"
+            android:id="@+id/edPhone"
+            android:layout_marginRight="10pt"
+            android:layout_width="wrap_content"
+            android:width="320dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="100dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="25pt">
+
+        <EditText
+            android:inputType="text"
+            android:hint="Email"
             android:id="@+id/edEmail"
             android:layout_marginRight="10pt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:width="320dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="140dp"
+            />
+
     </LinearLayout>
     <LinearLayout
         android:gravity="center"
-        android:layout_marginTop="10pt"
+        android:layout_marginTop="0dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="25pt">
-        <TextView
-            android:layout_marginLeft="10pt"
-            android:textSize="10pt"
-            android:text="Password:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
         <EditText
-            android:inputType="textPassword"
+            android:inputType="text"
+            android:hint="Enter username"
+            android:layout_marginRight="10pt"
+            android:layout_width="wrap_content"
+            android:width="320dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="100dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="25pt">
+
+        <EditText
             android:id="@+id/edPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10pt"/>
-    </LinearLayout>
-    <LinearLayout
-        android:gravity="center"
-        android:layout_marginTop="10pt"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="25pt">
-
-        <TextView
-
-            android:layout_marginLeft="10pt"
-            android:textSize="9pt"
-            android:text="ConfirmPass:"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <EditText
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10pt"
+            android:width="320dp"
+            android:hint="Enter Password"
             android:inputType="textPassword"
-            android:id="@+id/edCP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10pt"/>
-
+            android:paddingLeft="100dp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="15pt">
-        <TextView
-            android:background="#FF0000"
-            android:id="@+id/view1"
-            android:layout_marginLeft="60pt"
+        android:layout_height="25pt"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edCP"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10pt"
+            android:width="320dp"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:paddingLeft="91dp" />
+
     </LinearLayout>
+
+
 </LinearLayout>
