@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -30,6 +30,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:layout_gravity="center"
             android:id="@+id/edFirstname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
             android:paddingLeft="30dp" />
 
         <EditText
+            android:layout_gravity="center"
             android:id="@+id/edLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,6 +61,7 @@
         android:layout_height="25pt">
 
         <EditText
+            android:layout_gravity="center"
             android:inputType="text"
             android:hint="Phone Number"
             android:id="@+id/edPhone"
@@ -79,6 +82,7 @@
         android:layout_height="25pt">
 
         <EditText
+            android:layout_gravity="center"
             android:inputType="text"
             android:hint="Email"
             android:id="@+id/edEmail"
@@ -98,6 +102,8 @@
         android:layout_height="25pt">
 
         <EditText
+            android:layout_gravity="center"
+            android:id="@+id/edUsername"
             android:inputType="text"
             android:hint="Enter username"
             android:layout_marginRight="10pt"
@@ -116,6 +122,7 @@
         android:layout_height="25pt">
 
         <EditText
+            android:layout_gravity="center"
             android:id="@+id/edPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -134,6 +141,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:layout_gravity="center"
             android:id="@+id/edCP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -143,6 +151,18 @@
             android:inputType="textPassword"
             android:paddingLeft="91dp" />
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="15pt"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 
