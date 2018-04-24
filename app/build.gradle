@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.huynguyen.ggs"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -29,6 +29,6 @@ dependencies {
     compile 'com.google.firebase:firebase-database:15.0.0'
     compile 'com.google.firebase:firebase-core:15.0.0'
 
-
+    compile 'com.shobhitpuri.custombuttons:google-signin:1.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

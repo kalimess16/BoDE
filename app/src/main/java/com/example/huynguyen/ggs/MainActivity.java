@@ -18,8 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText us,pas;
-    Button bL,bR,bF,bG;
+    EditText edtUserName, edtPassword;
+    Button btnLogin, btnRegister, bF,bG;
 
 
 
@@ -29,16 +29,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AnhXa();
 
-        bR.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CreatAccount();
+                createAccount();
             }
         });
-        bL.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Login();
+                executeLogin();
             }
         });
         bF.setOnClickListener(new View.OnClickListener() {
@@ -55,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void Login() {
+    private void executeLogin() {
         Intent intent = new Intent(MainActivity.this, Voice.class);
         startActivity(intent);
     }
 
-    private void CreatAccount() {
+    private void createAccount() {
         LayoutInflater inflater = getLayoutInflater();
         View register = inflater.inflate(R.layout.register,null);
         final EditText user = register.findViewById(R.id.edEmail);
@@ -110,12 +110,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void AnhXa() {
-        us = findViewById(R.id.user);
-        pas= findViewById(R.id.pass);
-        bL= findViewById(R.id.login);
-        bR= findViewById(R.id.register);
+        edtUserName = findViewById(R.id.user);
+        edtPassword = findViewById(R.id.pass);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnRegister = findViewById(R.id.btnRegister);
         bF= findViewById(R.id.FP);
-        bG= findViewById(R.id.GG);
+        bG= findViewById(R.id.loginGoogle);
     }
 
 
