@@ -78,4 +78,14 @@
             android:layout_marginRight="10pt"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="15pt">
+        <TextView
+            android:background="#FF0000"
+            android:id="@+id/view1"
+            android:layout_marginLeft="60pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>
