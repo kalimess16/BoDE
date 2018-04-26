@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:weightSum="10"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <LinearLayout
+        android:layout_weight="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
@@ -17,14 +19,15 @@
             android:text="New account"
             android:textColor="@android:color/black"
             android:textSize="40dp"
-            android:paddingTop="10dp"
+
             />
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="25pt"
+        android:layout_height="20pt"
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:orientation="horizontal">
@@ -34,109 +37,118 @@
             android:id="@+id/edFirstname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:width="150dp"
             android:hint="First Name"
             android:inputType="text"
-            android:paddingLeft="30dp" />
+            android:gravity="center" />
 
         <EditText
             android:layout_gravity="center"
             android:id="@+id/edLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="0dp"
             android:width="150dp"
             android:hint="Last Name"
             android:inputType="text"
-            android:paddingLeft="30dp" />
+            android:gravity="center" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginTop="0dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="25pt">
+        android:layout_height="20pt">
 
         <EditText
+            android:gravity="center"
             android:layout_gravity="center"
-            android:inputType="text"
+            android:inputType="phone"
             android:hint="Phone Number"
             android:id="@+id/edPhone"
-            android:layout_marginRight="10pt"
             android:layout_width="wrap_content"
             android:width="320dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="100dp"
             />
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginTop="0dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="25pt">
+        android:layout_height="20pt">
 
         <EditText
             android:layout_gravity="center"
             android:inputType="text"
             android:hint="Email"
             android:id="@+id/edEmail"
-            android:layout_marginRight="10pt"
             android:layout_width="wrap_content"
             android:width="320dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="140dp"
+            android:gravity="center"
             />
 
     </LinearLayout>
     <LinearLayout
+        android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginTop="0dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="25pt">
+        android:layout_height="20pt">
 
         <EditText
             android:layout_gravity="center"
             android:id="@+id/edUsername"
             android:inputType="text"
             android:hint="Enter username"
-            android:layout_marginRight="10pt"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:width="320dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="100dp"
             />
 
     </LinearLayout>
     <LinearLayout
+        android:layout_weight="1"
         android:gravity="center"
         android:layout_marginTop="0dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="25pt">
+        android:layout_height="20pt">
 
         <EditText
             android:layout_gravity="center"
             android:id="@+id/edPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10pt"
             android:width="320dp"
             android:hint="Enter Password"
             android:inputType="textPassword"
-            android:paddingLeft="100dp" />
+            android:gravity="center"/>
     </LinearLayout>
 
     <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="25pt"
-        android:layout_marginTop="0dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#FF0000"
+            android:textSize="5pt"
+            android:gravity="center"
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -145,25 +157,32 @@
             android:id="@+id/edCP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10pt"
+            android:gravity="center"
             android:width="320dp"
             android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:paddingLeft="91dp" />
+            android:inputType="textPassword" />
 
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="15pt"
-        android:layout_marginTop="0dp"
         android:gravity="center"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_gravity="center"
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_marginRight="20pt"
+            android:text="Close"
+            android:id="@+id/btCl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="Register"
+            android:id="@+id/btRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
+
 
 
 </LinearLayout>
