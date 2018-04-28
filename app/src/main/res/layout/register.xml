@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:width="150dp"
             android:hint="First Name"
-            android:inputType="text"
+            android:inputType="textPersonName"
             android:gravity="center" />
 
         <EditText
@@ -83,7 +83,7 @@
 
         <EditText
             android:layout_gravity="center"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:hint="Email"
             android:id="@+id/edEmail"
             android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
         <EditText
             android:layout_gravity="center"
             android:id="@+id/edUsername"
-            android:inputType="text"
+            android:inputType="textAutoComplete"
             android:hint="Enter username"
             android:gravity="center"
             android:layout_width="wrap_content"

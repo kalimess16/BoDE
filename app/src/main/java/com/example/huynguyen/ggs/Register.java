@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,7 +62,6 @@ public class Register extends AppCompatActivity {
         getdata();
         if(Checkdata() == true){
             UpFirebase();
-            ClosedRe();
         }
         else
         {
@@ -77,6 +77,7 @@ public class Register extends AppCompatActivity {
                 public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                     if (databaseError == null) {
                         Toast.makeText(Register.this, "Success", Toast.LENGTH_LONG).show();
+                        ClosedRe();
                     } else {
                         Toast.makeText(Register.this, "Error", Toast.LENGTH_LONG).show();
                     }
@@ -90,31 +91,21 @@ public class Register extends AppCompatActivity {
     }
 
     private boolean Checkdata() {
-        if (TextUtils.isEmpty(fi) && TextUtils.isEmpty(la) && TextUtils.isEmpty(em) && TextUtils.isEmpty(us) && TextUtils.isEmpty(pa) && TextUtils.isEmpty(co) && TextUtils.isEmpty(dt) ) {
+        Log.i("Bug cho ni ne" , dt);
+
+        if (TextUtils.isEmpty(fi) || TextUtils.isEmpty(la) ||
+                TextUtils.isEmpty(em) || TextUtils.isEmpty(us) ||
+                TextUtils.isEmpty(pa) || TextUtils.isEmpty(co) ||
+                TextUtils.isEmpty(dt) ) {
             return false;
         }
 
-        if (TextUtils.isEmpty(fi)) {
-            return false;
-        }
-        if (TextUtils.isEmpty(la)) {
-            return false;
-        }
-
-        if (TextUtils.isEmpty(em)) {
-            return false;
-        }
-        if (TextUtils.isEmpty(us)) {
-            return false;
-        }
-        if (TextUtils.isEmpty(pa)) {
-            return false;
-        }
-        if (TextUtils.isEmpty(co)) {
-            return false;
-        }
         if(pa.length()<6){
             textView.setText("Password is too short");
+            return false;
+        }
+        if(dt.length()<9 && dt.length() > 12)
+        {
             return false;
         }
         return true;
