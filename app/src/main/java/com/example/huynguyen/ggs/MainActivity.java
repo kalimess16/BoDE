@@ -19,10 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText username,password;
-    Button bLogin,bRegister,bFP,bGoogle;
-    FirebaseDatabase database;
-    DatabaseReference myRef;
+    EditText username, password;
+    Button bLogin, bRegister, bFP, bGoogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Register.class);
+                Intent intent = new Intent(MainActivity.this, Register.class);
                 startActivity(intent);
             }
         });
@@ -46,13 +44,13 @@ public class MainActivity extends AppCompatActivity {
         bFP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Dang Update",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Dang Update", Toast.LENGTH_LONG).show();
             }
         });
         bGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Dang Update",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Dang Update", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -60,12 +58,9 @@ public class MainActivity extends AppCompatActivity {
     private void Login() {
      /*   Intent intent = new Intent(MainActivity.this, Voice.class);
         startActivity(intent);*/
-        if(checkdta()==true)
-        {
+        if (checkdta() == true) {
             Dangnhap();
-        }
-        else
-        {
+        } else {
 
         }
 
@@ -76,16 +71,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkdta() {
-        if(TextUtils.isEmpty(username.getText().toString())&& TextUtils.isEmpty(password.getText().toString()))
-        {
+        if (TextUtils.isEmpty(username.getText().toString()) && TextUtils.isEmpty(password.getText().toString())) {
             return false;
         }
-        if(TextUtils.isEmpty(username.getText().toString()))
-        {
+        if (TextUtils.isEmpty(username.getText().toString())) {
             return false;
         }
-        if(TextUtils.isEmpty(password.getText().toString()))
-        {
+        if (TextUtils.isEmpty(password.getText().toString())) {
             return false;
         }
         return true;
@@ -93,11 +85,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void AnhXa() {
         username = findViewById(R.id.user);
-        password= findViewById(R.id.pass);
-        bLogin= findViewById(R.id.login);
-        bRegister= findViewById(R.id.register);
-        bFP= findViewById(R.id.FP);
-        bGoogle= findViewById(R.id.GG);
+        password = findViewById(R.id.pass);
+        bLogin = findViewById(R.id.btnLogin);
+        bRegister = findViewById(R.id.btnRegister);
+        bFP = findViewById(R.id.FP);
+        bGoogle = findViewById(R.id.loginGG);
     }
-
 }
+

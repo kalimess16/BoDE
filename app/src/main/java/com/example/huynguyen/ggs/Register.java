@@ -91,7 +91,6 @@ public class Register extends AppCompatActivity {
     }
 
     private boolean Checkdata() {
-        Log.i("Bug cho ni ne" , dt);
 
         if (TextUtils.isEmpty(fi) || TextUtils.isEmpty(la) ||
                 TextUtils.isEmpty(em) || TextUtils.isEmpty(us) ||
