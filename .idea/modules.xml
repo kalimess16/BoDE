@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BoDE.iml" filepath="$PROJECT_DIR$/BoDE.iml" />
       <module fileurl="file://E:\ANDROID\GGS\BoDE.iml" filepath="E:\ANDROID\GGS\BoDE.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GGS.iml" filepath="$PROJECT_DIR$/GGS.iml" />
+      <module fileurl="file://D:\I LOVE STUDY\UNIVERSITY\CDIO2\Source code efun\BoDE\GGS.iml" filepath="D:\I LOVE STUDY\UNIVERSITY\CDIO2\Source code efun\BoDE\GGS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

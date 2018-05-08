@@ -9,9 +9,7 @@
         android:layout_weight="3"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0pt">
-
-
+        android:layout_height="0px">
 
         <LinearLayout
             android:gravity="center"
@@ -21,7 +19,7 @@
             <TextView
                 android:layout_gravity="center"
                 android:hint="How are you"
-                android:id="@+id/text1"
+                android:id="@+id/txtSubject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -30,14 +28,13 @@
         android:layout_weight="0.7"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="0pt">
+        android:layout_height="0px">
 
         <TextView
-            android:hint="Thu am"
-            android:id="@+id/tbThu"
+            android:hint="Recording result from voice"
+            android:id="@+id/txtResultFromVoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
 
     </LinearLayout>
 
@@ -51,7 +48,7 @@
 
         <ImageButton
             android:src="@drawable/radio"
-            android:id="@+id/btv"
+            android:id="@+id/btnVoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null" />
@@ -65,7 +62,7 @@
             android:layout_width="50pt"
             android:layout_height="match_parent">
             <ImageButton
-                android:id="@+id/btleft"
+                android:id="@+id/btnPrevious"
                 android:background="@null"
                 android:src="@drawable/left"
                 android:layout_width="match_parent"
@@ -77,13 +74,12 @@
             android:layout_height="match_parent">
             <ImageButton
                 android:layout_marginRight="13pt"
-                android:id="@+id/btright"
+                android:id="@+id/btnNext"
                 android:src="@drawable/right"
                 android:background="@null"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
 
     </LinearLayout>
 
