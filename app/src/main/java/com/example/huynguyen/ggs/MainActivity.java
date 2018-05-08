@@ -20,14 +20,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText us,pas;
     Button bL,bR,bF;
     private GoogleSignInClient mGoogleSignInClient;
-    int RC_SIGN_IN = 001;
+    int RC_SIGN_IN = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AnhXa();
+        initView();
+        addEvent();
 
+        executeGoogleLogin();
+
+    }
+
+    private void executeGoogleLogin() {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        findViewById(R.id.sign_in_button).setOnClickListener(this);
+    }
+
+    private void addEvent() {
         bR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,27 +62,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, "Dang Update", Toast.LENGTH_LONG).show();
             }
         });
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        findViewById(R.id.sign_in_button).setOnClickListener(this);
-
     }
 
     private void Login() {
-     /*   Intent intent = new Intent(MainActivity.this, Voice.class);
-        startActivity(intent);*/
-        if (verifyData()) {
-            dangNhap();
-        }
-
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(intent);
     }
 
-    private void dangNhap() {
-
-    }
 
     private boolean verifyData() {
         if (TextUtils.isEmpty(us.getText().toString()) && TextUtils.isEmpty(pas.getText().toString())) {
@@ -82,10 +83,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
-    private void AnhXa() {
+    private void initView() {
         us = findViewById(R.id.user);
         pas= findViewById(R.id.pass);
-        bL= findViewById(R.id.sign_in_button);
+        bL= findViewById(R.id.btnLogin);
         bR= findViewById(R.id.btnRegister);
         bF= findViewById(R.id.FP);
  //       bG= findViewById(R.id.sign_in_button);
@@ -104,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
-
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // a listener.
            /* Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);*/
-            Intent intent = new Intent(MainActivity.this, Voice.class);
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
         }
 

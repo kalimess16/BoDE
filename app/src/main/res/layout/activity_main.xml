@@ -79,7 +79,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Faster Login" />
+            android:text="Login by Google"
+            android:textSize="18sp"/>
 
         <com.google.android.gms.common.SignInButton
             android:layout_gravity="center_horizontal"

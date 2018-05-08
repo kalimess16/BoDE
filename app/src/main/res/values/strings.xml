@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Efun</string>
+    <string name="app_name">E F U N</string>
+    <string name="how_are_you_today">How are you today</string>
+    <string name="recording_result_from_voice">Recording result from voice</string>
+    <string name="title_activity_home">E F U N</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

@@ -1,5 +1,9 @@
 package com.example.huynguyen.ggs.model;
 
+import android.graphics.Color;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,8 +14,6 @@ import java.util.Scanner;
  */
 
 public class SentenceCompare {
-    private static final String RED = "#ff2100";
-    private static final String GREEN = "#06d11d";
     private static final String BLANK_SPACE = " ";
     private ArrayList<String> originSentence, recordingSentence;
     private ArrayList<Boolean> corrects;
@@ -50,18 +52,22 @@ public class SentenceCompare {
                 }
             }
         }
-
         return correct;
     }
-    String test() {
-        return originSentence.toString()+"\n"+recordingSentence.toString()+"\n"+corrects.toString()+"\n";
-    }
-    public String toString() {
-        String str="";
-        for(int i=0;i<originSentence.size();i++) {
-            str += "<font color = '"+(corrects.get(i) ? GREEN : RED)+"'>"+originSentence.get(i)+"</font>"+BLANK_SPACE;
+
+    public SpannableString spanString() {
+        //String str = "";
+        SpannableString ssSubject = null;
+        for (int i = 0; i < originSentence.size(); i++) {
+            ssSubject = new SpannableString(originSentence.get(i) + BLANK_SPACE);
+            if(corrects.get(i)){
+                ssSubject.setSpan(new ForegroundColorSpan(Color.GREEN), 0, 5, 0);
+            }else{
+                ssSubject.setSpan(new ForegroundColorSpan(Color.RED), 0, 5, 0);
+            }
+            //str += "<font color = '" + (corrects.get(i) ? GREEN : RED) + "'>" + originSentence.get(i) + "</font>" + BLANK_SPACE;
         }
-        return str;
+        return ssSubject;
     }
 
 }

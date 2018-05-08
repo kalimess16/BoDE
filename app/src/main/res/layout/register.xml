@@ -51,7 +51,6 @@
             android:hint="Last Name"
             android:inputType="text"
             android:gravity="center" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -69,8 +68,7 @@
             android:id="@+id/edPhone"
             android:layout_width="wrap_content"
             android:width="320dp"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

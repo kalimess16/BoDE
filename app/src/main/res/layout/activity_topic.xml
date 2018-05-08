@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.huynguyen.ggs.TopicActivity">
-    <ListView
-        android:id="@+id/lvListTopic"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvListTopic"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
 </LinearLayout>
