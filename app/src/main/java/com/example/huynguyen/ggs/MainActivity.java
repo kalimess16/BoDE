@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
         bF= findViewById(R.id.FP);
-        bG= findViewById(R.id.loginGoogle);
+        //bG= findViewById(R.id.loginGoogle);
     }
 
 
