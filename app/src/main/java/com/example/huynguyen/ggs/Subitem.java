@@ -5,16 +5,17 @@ package com.example.huynguyen.ggs;
  */
 
 public class Subitem {
-    String user;
-    String conP;
-    String pass;
-
+    String firstname,lastname,Email,username,password;
+    int phone;
     public Subitem(){
 
     }
-    public Subitem(String name,String mk,String xnmk){
-        this.user = name;
-        this.pass = mk;
-        this.conP = xnmk;
+    public Subitem(String first, String last, int number, String email, String user, String pass){
+       this.firstname = first;
+       this.lastname = last;
+       this.phone = number;
+       this.Email = email;
+       this.username = user;
+       this.password = pass;
     }
 }

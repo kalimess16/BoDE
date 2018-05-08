@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BoDE.iml" filepath="$PROJECT_DIR$/BoDE.iml" />
+      <module fileurl="file://E:\ANDROID\GGS\BoDE.iml" filepath="E:\ANDROID\GGS\BoDE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GGS.iml" filepath="$PROJECT_DIR$/GGS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
