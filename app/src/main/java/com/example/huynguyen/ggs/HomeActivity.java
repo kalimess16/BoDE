@@ -1,5 +1,6 @@
 package com.example.huynguyen.ggs;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +33,11 @@ public class HomeActivity extends AppCompatActivity
     private static final String TAG = "HOME_ACTIVITY";
 
     SentenceCompare sentenceCompare;
+
+    String strSubject = "How are you today?";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +73,10 @@ public class HomeActivity extends AppCompatActivity
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void initView() {
         txtSubject = findViewById(R.id.txtSubject);
+        txtSubject.setText(strSubject+"");
         txtResultFromVoice = findViewById(R.id.txtResultFromVoice);
         btnVoice = findViewById(R.id.btnVoice);
         btnNext = findViewById(R.id.btnNext);
@@ -104,7 +112,7 @@ public class HomeActivity extends AppCompatActivity
                 Log.d(TAG, result.get(0));
                 txtResultFromVoice.setText(result.get(0));
                 String resultVoice = result.get(0);
-                String strSubject = txtSubject.getText().toString();
+                //String strSubject = txtSubject.getText().toString();
                 sentenceCompare = new SentenceCompare(strSubject, resultVoice);
                 txtSubject.setText(sentenceCompare.spanString());
             }
@@ -122,7 +130,8 @@ public class HomeActivity extends AppCompatActivity
             Intent topicIntent = new Intent(HomeActivity.this, TopicActivity.class);
             startActivity(topicIntent);
         } else if (id == R.id.nav_process) {
-            anountationEvent("Tui chưa có cập nhật");
+            Intent topicIntent = new Intent(HomeActivity.this, ProcessingActivity.class);
+            startActivity(topicIntent);
         } else if (id == R.id.nav_chat_bot) {
             anountationEvent("Tui chưa có cập nhật");
         } else if (id == R.id.nav_chat_stranger) {

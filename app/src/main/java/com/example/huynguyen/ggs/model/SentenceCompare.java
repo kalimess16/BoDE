@@ -4,8 +4,9 @@ import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
 
 /**
  * Created by Ha Truong on 5/8/2018.
@@ -15,8 +16,8 @@ import java.util.Scanner;
 
 public class SentenceCompare {
     private static final String BLANK_SPACE = " ";
-    private ArrayList<String> originSentence, recordingSentence;
-    private ArrayList<Boolean> corrects;
+    private List<String> originSentence, recordingSentence;
+    private List<Boolean> corrects;
 
     public SentenceCompare(String origin, String recording) {
         originSentence = toArrayList(origin);
@@ -24,22 +25,26 @@ public class SentenceCompare {
         corrects = correctWords(originSentence, recordingSentence);
     }
 
-    private ArrayList<String> toArrayList(String str) {
-        //
-        Scanner scanner = new Scanner(str.trim());
-        ArrayList<String> sentence = new ArrayList<>();
-        // solving
-        while (scanner.hasNext()) {
-            sentence.add(scanner.next());
+    private List<String> toArrayList(String text) {
+        List<String> words = new ArrayList<>();
+        BreakIterator breakIterator = BreakIterator.getWordInstance();
+        breakIterator.setText(text);
+        int lastIndex = breakIterator.first();
+        while (BreakIterator.DONE != lastIndex) {
+            int firstIndex = lastIndex;
+            lastIndex = breakIterator.next();
+            if (lastIndex != BreakIterator.DONE && Character.isLetterOrDigit(text.charAt(firstIndex))) {
+                words.add(text.substring(firstIndex, lastIndex));
+            }
         }
-        return sentence;
+        return words;
     }
 
     // Phuong thuc dung de so xac dinh vi tri cac tu dung
-    private ArrayList<Boolean> correctWords(ArrayList<String> origin, ArrayList<String> list) {
+    private List<Boolean> correctWords(List<String> origin, List<String> list) {
         int n = origin.size(), m = list.size();
         boolean[][] matrix = new boolean[n][m];
-        ArrayList<Boolean> correct = new ArrayList<>();
+        List<Boolean> correct = new ArrayList<>();
         int tmp = 0;
         for (int i = 0; i < n; i++) {
             correct.add(false);
@@ -61,9 +66,9 @@ public class SentenceCompare {
         for (int i = 0; i < originSentence.size(); i++) {
             ssSubject = new SpannableString(originSentence.get(i) + BLANK_SPACE);
             if(corrects.get(i)){
-                ssSubject.setSpan(new ForegroundColorSpan(Color.GREEN), 0, 5, 0);
+                ssSubject.setSpan(new ForegroundColorSpan(Color.GREEN), 0, 4, 0);
             }else{
-                ssSubject.setSpan(new ForegroundColorSpan(Color.RED), 0, 5, 0);
+                ssSubject.setSpan(new ForegroundColorSpan(Color.RED), 0, 4, 0);
             }
             //str += "<font color = '" + (corrects.get(i) ? GREEN : RED) + "'>" + originSentence.get(i) + "</font>" + BLANK_SPACE;
         }

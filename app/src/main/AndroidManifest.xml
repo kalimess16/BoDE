@@ -17,11 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TopicActivity" />
+        <activity
+            android:name=".TopicActivity"
+            android:label="@string/title_activity_topic" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProcessingActivity"
+            android:label="@string/title_activity_processing" />
     </application>
 
 </manifest>
