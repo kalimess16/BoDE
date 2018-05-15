@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.huynguyen.ggs.model.Chatbot;
 import com.example.huynguyen.ggs.model.SentenceCompare;
 
 import java.util.ArrayList;
@@ -34,7 +35,8 @@ public class HomeActivity extends AppCompatActivity
 
     SentenceCompare sentenceCompare;
 
-    String strSubject = "How are you today?";
+    String strSubject;
+
 
 
 
@@ -68,15 +70,17 @@ public class HomeActivity extends AppCompatActivity
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(HomeActivity.this, "Dang Update", Toast.LENGTH_LONG).show();
+
             }
         });
     }
 
+
+
+
     @SuppressLint("SetTextI18n")
     private void initView() {
         txtSubject = findViewById(R.id.txtSubject);
-        txtSubject.setText(strSubject+"");
         txtResultFromVoice = findViewById(R.id.txtResultFromVoice);
         btnVoice = findViewById(R.id.btnVoice);
         btnNext = findViewById(R.id.btnNext);
@@ -133,7 +137,8 @@ public class HomeActivity extends AppCompatActivity
             Intent topicIntent = new Intent(HomeActivity.this, ProcessingActivity.class);
             startActivity(topicIntent);
         } else if (id == R.id.nav_chat_bot) {
-            anountationEvent("Tui chưa có cập nhật");
+            Intent topicIntent = new Intent(HomeActivity.this, Chatbot.class);
+            startActivity(topicIntent);
         } else if (id == R.id.nav_chat_stranger) {
             anountationEvent("Tui chưa có cập nhật");
         } else if (id == R.id.nav_setting) {

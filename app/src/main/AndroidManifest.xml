@@ -27,6 +27,10 @@
         <activity
             android:name=".ProcessingActivity"
             android:label="@string/title_activity_processing" />
+        <activity
+            android:name=".model.Chatbot">
+
+        </activity>
     </application>
 
 </manifest>

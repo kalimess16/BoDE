@@ -33,7 +33,6 @@
                     android:textSize="20sp"
                     android:textColor="@android:color/darker_gray"
                     android:layout_gravity="center"
-                    android:hint="@string/how_are_you_today"
                     android:id="@+id/txtSubject"
                     android:gravity="center"
                     android:layout_width="match_parent"
